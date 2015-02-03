@@ -1,4 +1,5 @@
 <?php
+
 namespace Heise\Shariff\Backend;
 
 class LinkedIn extends Request implements ServiceInterface
@@ -11,8 +12,8 @@ class LinkedIn extends Request implements ServiceInterface
 
     public function getRequest($url)
     {
-        $linkedin = 'https://www.linkedin.com/countserv/count/share?url=' . urlencode($url). '&lang=de_DE&format=json';
-        return $this->createRequest($linkedin);
+        $url = 'https://www.linkedin.com/countserv/count/share?url='.urlencode($url).'&lang=de_DE&format=json';
+        return $this->createRequest($url);
     }
 
     public function extractCount($data)
